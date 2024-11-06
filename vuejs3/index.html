@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello</h1>
     <div id="app">
         <div v-if="showBooks">
             <p>{{ title }} - {{ author }} - {{ age }}</p>
@@ -18,6 +18,14 @@
             <span v-else>Show Books</span>
         </button>
         <p v-show="showBooks">Currently showing books...</p>
+        <br>
+        <hr>
+        <br>
+        <!-- mouse events -->
+         <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+         <div class="box" @mouseleave=" handleEvent">mouseleave</div>
+         <div class="box" @dblclick="handleEvent">double click</div>
+         <div class="box" @mousemove="handleMousemove">position - [{{x}},{{y}}]</div>
     </div>
 </body>
 <script src="app.js"></script>
